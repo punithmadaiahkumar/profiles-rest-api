@@ -7,13 +7,13 @@ from django.contrib.auth.models import BaseUserManager
 # Create your models here.
 
 # UserProfileManager model
-class UserProfileManager():
+class UserProfileManager(BaseUserManager):
     """Manager for user profiles"""
 
     def create_user(self, email, name, password=None):
         """Create a new user profile"""
         if not email:
-            raise ValueError('User must have an email addrss')
+            raise ValueError('User must have an email address')
 
         email = self.normalize_email(email)
         user = seld.model(email=email, name=name)
@@ -53,7 +53,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         return self.name
 
     def get_short_name(self):
-        """Retrive shot name of user"""
+        """Retrive short name of user"""
         return self.name
 
     def __str__(self):
