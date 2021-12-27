@@ -1,3 +1,3 @@
 # Profiles REST API
 
-Profiles REST API curse code.
+Profiles REST API source code.
